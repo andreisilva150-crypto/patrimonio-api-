@@ -1,20 +1,18 @@
 package br.com.senai.patrimonio.model;
 
-public class Sala {
+public class Bem {
     private Long id;
     private String nome;
-    private String qrCode;
-    private Bloco bloco;
+    private String code;
     private Empresa empresa;
 
-    public Sala() {
+    public Bem () {
     }
 
-    public Sala(Long id, String nome, String qrCode, Bloco bloco, Empresa empresa) {
+    public Bem(Long id, String nome, String code, Empresa empresa) {
         this.id = id;
         this.nome = nome;
-        this.qrCode = qrCode;
-        this.bloco = bloco;
+        this.code = code;
         this.empresa = empresa;
     }
 
@@ -34,20 +32,12 @@ public class Sala {
         this.nome = nome;
     }
 
-    public String getQrCode() {
-        return qrCode;
+    public String getCode() {
+        return code;
     }
 
-    public void setQrCode(String qrCode) {
-        this.qrCode = qrCode;
-    }
-
-    public Bloco getBloco() {
-        return bloco;
-    }
-
-    public void setBloco(Bloco bloco) {
-        this.bloco = bloco;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public Empresa getEmpresa() {

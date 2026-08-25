@@ -2,6 +2,9 @@ package br.com.senai.patrimonio;
 
 import br.com.senai.patrimonio.model.Empresa;
 import br.com.senai.patrimonio.model.Endereco;
+import br.com.senai.patrimonio.model.Funcionario;
+import br.com.senai.patrimonio.model.Sala;
+import br.com.senai.patrimonio.model.enums.Cargo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -28,5 +31,14 @@ public class PatrimonioApplication {
 				"Perto do posto de saúde", "Brasilia", "Criciúma", "SC");
 
 		System.out.println(enderecoComArgumentos.getBairro());
+
+		Sala sala = new Sala ();
+
+		Funcionario funcionario = new Funcionario(
+				 35L, "Mariazinha" , "13456789",
+				Cargo.GERENTE, empresa, sala
+
+		);
+
 	}
 }
