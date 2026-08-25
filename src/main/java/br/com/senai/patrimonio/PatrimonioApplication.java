@@ -24,7 +24,7 @@ public class PatrimonioApplication {
 		endereco.setRua("Rua Belo Horizonte");
 		System.out.println(endereco.getRua());
 
-		empresa.getEndereco();
+		empresa.setEndereco(endereco);
 		System.out.println(empresa.getEndereco().getRua());
 
 		Endereco enderecoComArgumentos = new Endereco("Libano Jose Gomes", "489",
