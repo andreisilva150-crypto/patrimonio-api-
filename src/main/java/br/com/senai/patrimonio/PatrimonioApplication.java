@@ -1,10 +1,13 @@
 package br.com.senai.patrimonio;
 
+import br.com.senai.patrimonio.avaliacao.Participante;
 import br.com.senai.patrimonio.model.Empresa;
 import br.com.senai.patrimonio.model.Endereco;
 import br.com.senai.patrimonio.model.Funcionario;
 import br.com.senai.patrimonio.model.Sala;
 import br.com.senai.patrimonio.model.enums.Cargo;
+import br.com.senai.patrimonio.model.enums.Pagamento;
+import br.com.senai.patrimonio.model.enums.PagamentoComposto;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -16,7 +19,7 @@ public class PatrimonioApplication {
 
 		SpringApplication.run(PatrimonioApplication.class, args);
 
-		Empresa empresa = new Empresa();
+		/*Empresa empresa = new Empresa();
 		empresa.setRazaoSocial("Senai LTDA");
 		System.out.println(empresa.getRazaoSocial());
 
@@ -39,6 +42,20 @@ public class PatrimonioApplication {
 				Cargo.GERENTE, empresa, sala
 
 		);
+		System.out.println(funcionario.getCPF());
 
-	}
-}
+
+		System.out.println(Pagamento.PIX);
+		System.out.println(PagamentoComposto.PIX.getDescricao());
+		System.out.println(PagamentoComposto.PIX);
+		System.out.println(PagamentoComposto.PIX.getSituacao());*/
+
+		Participante participante = new Participante("Andrei","andrei1910@gmail.com", "telefone", "matricula", "Nivel");
+		System.out.println("Nome:" + participante.getNome());
+		System.out.println("e-mail:" + participante.getEmail());
+
+
+			}
+
+		}
+
