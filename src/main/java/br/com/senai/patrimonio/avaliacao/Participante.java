@@ -1,21 +1,18 @@
 package br.com.senai.patrimonio.avaliacao;
 
+import br.com.senai.patrimonio.avaliacao.enums.Nivel;
+
 public class Participante extends Pessoa {
     private String matricula;
-    private String Nivel;
+    private Nivel nivel;
 
     public Participante() {
     }
 
-    public Participante(String matricula, String nivel) {
-        this.matricula = matricula;
-        Nivel = nivel;
-    }
-
-    public Participante(String nome, String email, String telefone, String matricula, String nivel) {
+    public Participante(String nome, String email, String telefone, String matricula, Nivel nivel) {
         super(nome, email, telefone);
         this.matricula = matricula;
-        Nivel = nivel;
+        this.nivel = nivel;
     }
 
     public String getMatricula() {
@@ -26,12 +23,12 @@ public class Participante extends Pessoa {
         this.matricula = matricula;
     }
 
-    public String getNivel() {
-        return Nivel;
+    public Nivel getNivel() {
+        return nivel;
     }
 
-    public void setNivel(String nivel) {
-        Nivel = nivel;
+    public void setNivel(Nivel nivel) {
+        this.nivel = nivel;
     }
 }
 

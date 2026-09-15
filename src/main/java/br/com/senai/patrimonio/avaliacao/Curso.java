@@ -2,12 +2,12 @@ package br.com.senai.patrimonio.avaliacao;
 
 import br.com.senai.patrimonio.avaliacao.enums.StatusEvento;
 
-public class Curso extends Evento{
+public class Curso extends Evento {
     private int cargaHoraria;
     private String instrutor;
     private int quantidadeVagas;
 
-    public Curso (){
+    public Curso() {
     }
 
     public Curso(int codigo, String nome, String local, StatusEvento status, Participante responsavel, int cargaHoraria, String instructor, int quantidadeVagas) {
