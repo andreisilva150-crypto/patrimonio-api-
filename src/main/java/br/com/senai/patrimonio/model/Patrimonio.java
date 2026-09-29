@@ -5,7 +5,7 @@ import br.com.senai.patrimonio.model.enums.EstadoConservacao;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Patrimonio {
+public class Patrimonio implements BuscarConservacao {
     private Long Id;
     private Bem bem;
     private Sala sala;
@@ -18,21 +18,23 @@ public class Patrimonio {
     public Patrimonio() {
     }
 
-    //Alocar este patrimonio em uma sala e garantir que elel saia da responsabilidade de um funcionário//
+    //Alocar este patrimonio em uma sala e garantir que ele saia da responsabilidade de um funcionário//
     public void alocarEmSala(Sala sala) {
         this.sala = sala;
         this.funcionario = null;
     }
+
     // Retorna true se possuir uma sala ou um funcionario vinculado ao patrimonio//
-    public boolean possuiLocalizacaoValida(){
+    public boolean possuiLocalizacaoValida() {
         return (sala != null) || (funcionario != null);
     }
-    public Localizavel getlocalizacaoAtual(){
+
+    public Localizavel getlocalizacaoAtual() {
         return this.sala != null ? sala : funcionario;
     }
 
     //Aloca este patrimônio sob responsabilidade de um funcionário//
-    public void alocarParaFuncionario(Funcionario Funcionario){
+    public void alocarParaFuncionario(Funcionario Funcionario) {
         this.funcionario = funcionario;
         this.sala = null;
     }
@@ -99,5 +101,12 @@ public class Patrimonio {
 
     public void setValor(BigDecimal valor) {
         this.valor = valor;
+    }
+
+
+    //override serve para sobre escrever um metodo//
+    @Override
+    public String validarEstadoConservacao() {
+        return this.estado != null ? this.estado.toString() : "SEM ESTADO DE CONSERVAÇAO";
     }
 }
