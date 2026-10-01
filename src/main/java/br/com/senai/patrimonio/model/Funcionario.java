@@ -2,12 +2,13 @@ package br.com.senai.patrimonio.model;
 
 import br.com.senai.patrimonio.model.enums.Cargo;
 
-public class Funcionario extends Pessoa implements Localizavel{
+public class Funcionario extends Pessoa implements Localizavel, BuscarEmpresaVinculada {
     private Cargo cargo;
     private Empresa empresa;
     private Sala salasResponsaveis;
 
-    public Funcionario (){}
+    public Funcionario() {
+    }
 
     public Funcionario(Cargo cargo, Empresa empresa, Sala salasResponsaveis) {
         this.cargo = cargo;
@@ -48,6 +49,16 @@ public class Funcionario extends Pessoa implements Localizavel{
 
     @Override
     public String getDescricaoLocalizavel() {
-        return "Reponabilidade de "+ getNome() + " (" + cargo + ")";
+        return "Reponabilidade de " + getNome() + " (" + cargo + ")";
+    }
+
+    @Override
+    public String getEmpresaVinculada() {
+        return empresa != null ? "Empresa: " + empresa.getNome() : "Empresa não informada";
+    }
+
+    @Override
+    public String getIdentificacao() {
+        return super.getIdentificacao() + " - " + cargo;
     }
 }
